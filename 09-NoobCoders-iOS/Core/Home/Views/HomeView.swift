@@ -13,48 +13,50 @@ struct HomeView: View {
     
     var body: some View {
         
-        ZStack {
-            // background
-            Color.theme.background.ignoresSafeArea()
-            
-            // content
-            TabView(selection: $tabSelected) {
-                ContentView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text(Tabs.home.rawValue)
-                    }
-                    .tag(Tabs.home)
+        NavigationView {
+            ZStack {
+                // background
+                Color.theme.background.ignoresSafeArea()
                 
-                AllContestsView()
-                    .tabItem {
-                        Image(systemName: "brain.head.profile")
-                        Text(Tabs.contests.rawValue)
-                    }
-                    .tag(Tabs.contests)
-                
-                ContentView()
-                    .tabItem {
-                        Image(systemName: "g.circle")
-                        Text(Tabs.geeksforgeeks.rawValue)
-                    }
-                    .tag(Tabs.geeksforgeeks)
-                
-                ContentView()
-                    .tabItem {
-                        Image(systemName: "newspaper")
-                        Text(Tabs.news.rawValue)
-                    }
-                    .tag(Tabs.news)
-                
-                ContentView()
-                    .tabItem {
-                        Image(systemName: "graduationcap")
-                        Text(Tabs.jobs.rawValue)
-                    }
-                    .tag(Tabs.jobs)
+                // content
+                TabView(selection: $tabSelected) {
+                    ContentView()
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text(Tabs.home.rawValue)
+                        }
+                        .tag(Tabs.home)
+                    
+                    AllContestsView()
+                        .tabItem {
+                            Image(systemName: "brain.head.profile")
+                            Text(Tabs.contests.rawValue)
+                        }
+                        .tag(Tabs.contests)
+                    
+                    ContentView()
+                        .tabItem {
+                            Image(systemName: "g.circle")
+                            Text(Tabs.geeksforgeeks.rawValue)
+                        }
+                        .tag(Tabs.geeksforgeeks)
+                    
+                    ContentView()
+                        .tabItem {
+                            Image(systemName: "newspaper")
+                            Text(Tabs.news.rawValue)
+                        }
+                        .tag(Tabs.news)
+                    
+                    ContentView()
+                        .tabItem {
+                            Image(systemName: "graduationcap")
+                            Text(Tabs.jobs.rawValue)
+                        }
+                        .tag(Tabs.jobs)
+                }
+                .navigationTitle(returnNavBarTitle(tabSelection: self.tabSelected))
             }
-            .navigationTitle(returnNavBarTitle(tabSelection: self.tabSelected))
         }
     }
 }
@@ -63,9 +65,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
             HomeView()
-        }
     }
 }
 
