@@ -24,6 +24,8 @@ struct _9_NoobCoders_iOSApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @State private var showLaunchView: Bool = true
+    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
@@ -38,9 +40,19 @@ struct _9_NoobCoders_iOSApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
+                ZStack {
                     FirstScreen()
                 }
+                
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLaunchView: $showLaunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(2.0)
             }
         }
     }
+}
 
