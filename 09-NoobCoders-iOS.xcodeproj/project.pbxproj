@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4C60FC28E0646900012068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4C60FB28E0646900012068 /* Assets.xcassets */; };
+		4F4C60FE28E064BE00012068 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C60FD28E064BE00012068 /* Color.swift */; };
 		4F97B28728E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97B28628E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift */; };
 		4F97B28928E03440004C3BE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97B28828E03440004C3BE2 /* ContentView.swift */; };
-		4F97B28B28E03443004C3BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F97B28A28E03443004C3BE2 /* Assets.xcassets */; };
 		4F97B28E28E03443004C3BE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F97B28D28E03443004C3BE2 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F4C60FB28E0646900012068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F4C60FD28E064BE00012068 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F97B28328E03440004C3BE2 /* 09-NoobCoders-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "09-NoobCoders-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F97B28628E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _9_NoobCoders_iOSApp.swift; sourceTree = "<group>"; };
 		4F97B28828E03440004C3BE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4F97B28A28E03443004C3BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F97B28D28E03443004C3BE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +34,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F4C60F628E0635000012068 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4F4C60F728E0638900012068 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4F4C60F828E0639200012068 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C60FD28E064BE00012068 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F4C60F928E0639E00012068 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F4C60FA28E063A600012068 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4F97B27A28E03440004C3BE2 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +91,13 @@
 			children = (
 				4F97B28628E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift */,
 				4F97B28828E03440004C3BE2 /* ContentView.swift */,
-				4F97B28A28E03443004C3BE2 /* Assets.xcassets */,
+				4F4C60F628E0635000012068 /* Utilities */,
+				4F4C60F728E0638900012068 /* Services */,
+				4F4C60F828E0639200012068 /* Extensions */,
+				4F4C60F928E0639E00012068 /* Models */,
+				4F4C60FA28E063A600012068 /* Core */,
 				4F97B28C28E03443004C3BE2 /* Preview Content */,
+				4F4C60FB28E0646900012068 /* Assets.xcassets */,
 			);
 			path = "09-NoobCoders-iOS";
 			sourceTree = "<group>";
@@ -125,8 +168,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F4C60FC28E0646900012068 /* Assets.xcassets in Resources */,
 				4F97B28E28E03443004C3BE2 /* Preview Assets.xcassets in Resources */,
-				4F97B28B28E03443004C3BE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +182,7 @@
 			files = (
 				4F97B28928E03440004C3BE2 /* ContentView.swift in Sources */,
 				4F97B28728E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift in Sources */,
+				4F4C60FE28E064BE00012068 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
