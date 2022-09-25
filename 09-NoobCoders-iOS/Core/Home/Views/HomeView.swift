@@ -26,7 +26,7 @@ struct HomeView: View {
                     }
                     .tag(Tabs.home)
                 
-                ContentView()
+                AllContestsView()
                     .tabItem {
                         Image(systemName: "brain.head.profile")
                         Text(Tabs.contests.rawValue)

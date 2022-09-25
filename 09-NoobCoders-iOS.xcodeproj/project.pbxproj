@@ -12,6 +12,13 @@
 		4F4C610028E073C500012068 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C60FF28E073C500012068 /* PreviewProvider.swift */; };
 		4F4C610228E073FC00012068 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C610128E073FC00012068 /* UIApplication.swift */; };
 		4F4C610C28E074A400012068 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C610B28E074A400012068 /* HomeView.swift */; };
+		4F4C612028E0974100012068 /* AllContestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C611F28E0974100012068 /* AllContestModel.swift */; };
+		4F4C612228E0979C00012068 /* ContestDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612128E0979C00012068 /* ContestDataService.swift */; };
+		4F4C612428E097E000012068 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612328E097E000012068 /* NetworkingManager.swift */; };
+		4F4C612628E0982600012068 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612528E0982600012068 /* Date.swift */; };
+		4F4C612A28E0987D00012068 /* AllContestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612928E0987D00012068 /* AllContestViewModel.swift */; };
+		4F4C612E28E098BE00012068 /* AllContestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612D28E098BD00012068 /* AllContestsView.swift */; };
+		4F4C613028E098D100012068 /* ContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C612F28E098D100012068 /* ContestView.swift */; };
 		4F97B28728E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97B28628E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift */; };
 		4F97B28928E03440004C3BE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97B28828E03440004C3BE2 /* ContentView.swift */; };
 		4F97B28E28E03443004C3BE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F97B28D28E03443004C3BE2 /* Preview Assets.xcassets */; };
@@ -23,6 +30,13 @@
 		4F4C60FF28E073C500012068 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		4F4C610128E073FC00012068 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		4F4C610B28E074A400012068 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4F4C611F28E0974100012068 /* AllContestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllContestModel.swift; sourceTree = "<group>"; };
+		4F4C612128E0979C00012068 /* ContestDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestDataService.swift; sourceTree = "<group>"; };
+		4F4C612328E097E000012068 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		4F4C612528E0982600012068 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4F4C612928E0987D00012068 /* AllContestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllContestViewModel.swift; sourceTree = "<group>"; };
+		4F4C612D28E098BD00012068 /* AllContestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllContestsView.swift; sourceTree = "<group>"; };
+		4F4C612F28E098D100012068 /* ContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestView.swift; sourceTree = "<group>"; };
 		4F97B28328E03440004C3BE2 /* 09-NoobCoders-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "09-NoobCoders-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F97B28628E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _9_NoobCoders_iOSApp.swift; sourceTree = "<group>"; };
 		4F97B28828E03440004C3BE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +57,7 @@
 		4F4C60F628E0635000012068 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4F4C612328E097E000012068 /* NetworkingManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 		4F4C60F728E0638900012068 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4F4C612128E0979C00012068 /* ContestDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -60,6 +76,7 @@
 				4F4C60FD28E064BE00012068 /* Color.swift */,
 				4F4C60FF28E073C500012068 /* PreviewProvider.swift */,
 				4F4C610128E073FC00012068 /* UIApplication.swift */,
+				4F4C612528E0982600012068 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -67,6 +84,7 @@
 		4F4C60F928E0639E00012068 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F4C611F28E0974100012068 /* AllContestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -80,6 +98,8 @@
 				4F4C610528E0742E00012068 /* GeeksForGeeks */,
 				4F4C610428E0742600012068 /* News */,
 				4F4C610328E0741B00012068 /* Jobs */,
+				4F4C610D28E07E8A00012068 /* Launch */,
+				4F4C610E28E07E9200012068 /* Components */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -115,6 +135,8 @@
 		4F4C610728E0744500012068 /* All Contests */ = {
 			isa = PBXGroup;
 			children = (
+				4F4C612828E0986100012068 /* Views */,
+				4F4C612728E0985A00012068 /* ViewModels */,
 			);
 			path = "All Contests";
 			sourceTree = "<group>";
@@ -139,6 +161,37 @@
 			isa = PBXGroup;
 			children = (
 				4F4C610B28E074A400012068 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F4C610D28E07E8A00012068 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		4F4C610E28E07E9200012068 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4F4C612728E0985A00012068 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C612928E0987D00012068 /* AllContestViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4F4C612828E0986100012068 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C612D28E098BD00012068 /* AllContestsView.swift */,
+				4F4C612F28E098D100012068 /* ContestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,10 +307,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F97B28928E03440004C3BE2 /* ContentView.swift in Sources */,
+				4F4C612628E0982600012068 /* Date.swift in Sources */,
 				4F4C610028E073C500012068 /* PreviewProvider.swift in Sources */,
+				4F4C612A28E0987D00012068 /* AllContestViewModel.swift in Sources */,
 				4F97B28728E03440004C3BE2 /* _9_NoobCoders_iOSApp.swift in Sources */,
 				4F4C610C28E074A400012068 /* HomeView.swift in Sources */,
 				4F4C610228E073FC00012068 /* UIApplication.swift in Sources */,
+				4F4C612E28E098BE00012068 /* AllContestsView.swift in Sources */,
+				4F4C612028E0974100012068 /* AllContestModel.swift in Sources */,
+				4F4C612428E097E000012068 /* NetworkingManager.swift in Sources */,
+				4F4C612228E0979C00012068 /* ContestDataService.swift in Sources */,
+				4F4C613028E098D100012068 /* ContestView.swift in Sources */,
 				4F4C60FE28E064BE00012068 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
