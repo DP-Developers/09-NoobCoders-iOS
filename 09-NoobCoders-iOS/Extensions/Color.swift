@@ -20,6 +20,8 @@ struct ColorTheme {
     let darkOrangeColor = Color("DarkOrangeColor")
     let lightOrangeColor = Color("LightOrangeColor")
     let secondaryText = Color("SecondaryTextColor")
+    let greenColor = Color("GreenColor")
+    let redColor = Color("RedColor")
 }
 
 struct LaunchTheme {
