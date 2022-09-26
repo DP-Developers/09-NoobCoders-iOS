@@ -12,6 +12,7 @@ class AllContestViewModel: ObservableObject {
     @Published var allContests: [AllContestModel] = []
     @Published var allContestAfter24Hours: [AllContestModel] = []
     @Published var allContestIn24Hours: [AllContestModel] = []
+    @Published var firstContest: AllContestModel = DeveloperPreview.instance.contest
     
     private let contestDataService = ContestDataService()
     private var cancellabes = Set<AnyCancellable>()
@@ -26,6 +27,8 @@ class AllContestViewModel: ObservableObject {
                 self?.allContests = contests
                 self?.allContestIn24Hours = contests.filter({ $0.in24_Hours == .yes})
                 self?.allContestAfter24Hours = contests.filter({ $0.in24_Hours == .no})
+                self?.firstContest = self?.allContestIn24Hours.first ?? DeveloperPreview.instance.contest
+//                print(self?.firstContest ?? "")
             }
             .store(in: &cancellabes)
     }
