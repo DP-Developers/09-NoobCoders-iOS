@@ -49,4 +49,13 @@ class NetworkingManager {
             print(error.localizedDescription)
         }
     }
+    
+    static func handleCompletionForNewsData(completion: Subscribers.Completion<Publishers.Decode<AnyPublisher<Data, Error>, NewsDataModel, JSONDecoder>.Failure>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            print(error)
+        }
+    }
 }
