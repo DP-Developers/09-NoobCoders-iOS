@@ -24,6 +24,7 @@ struct JobsCellView: View {
                 Spacer()
             }
             .padding(.vertical)
+            .padding(.horizontal)
         }
     }
 }
