@@ -9,7 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @AppStorage("currentUserSignIn") var currentUserSignIn: Bool = true
+    @AppStorage("userOnLoginScreen") var userOnLoginScreen: Bool = false
+    
     @State private var tabSelected: Tabs = .home
+    //    @State private var showSheet: Bool  = false
+    private let resourceDataService = ResourceDataService()
     
     var body: some View {
         
@@ -20,7 +25,7 @@ struct HomeView: View {
                 
                 // content
                 TabView(selection: $tabSelected) {
-                    ContentView()
+                    MainHome()
                         .tabItem {
                             Image(systemName: "house")
                             Text(Tabs.home.rawValue)
@@ -34,7 +39,7 @@ struct HomeView: View {
                         }
                         .tag(Tabs.contests)
                     
-                    ContentView()
+                    ResourcesView()
                         .tabItem {
                             Image(systemName: "square.grid.2x2.fill")
                             Text(Tabs.resources.rawValue)
@@ -56,7 +61,32 @@ struct HomeView: View {
                         .tag(Tabs.jobs)
                 }
                 .navigationTitle(returnNavBarTitle(tabSelection: self.tabSelected))
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            ResourceSheetView()
+                        } label: {
+                            Image(systemName: "doc.badge.plus")
+                                .foregroundColor(Color.theme.lightOrangeColor)
+                            
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            currentUserSignIn.toggle()
+                            userOnLoginScreen.toggle()
+                        } label: {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .foregroundColor(Color.theme.lightOrangeColor)
+                        }
+                        
+                    }
+                }
             }
+            //                .sheet(isPresented: $showSheet) {
+            //                    ResourceSheetView()
+            //                }
         }
     }
 }
