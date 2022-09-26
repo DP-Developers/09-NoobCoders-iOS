@@ -35,6 +35,12 @@ struct _9_NoobCoders_iOSApp: App {
         UITabBar.appearance().isTranslucent = false
         
         UITableView.appearance().backgroundColor = UIColor.clear
+        
+        let attributes: [NSAttributedString.Key:Any] = [
+            .foregroundColor : UIColor.white
+        ]
+        UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .selected)
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.theme.lightOrangeColor)
     }
     
     var body: some Scene {
