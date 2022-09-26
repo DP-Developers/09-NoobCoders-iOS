@@ -41,4 +41,13 @@ class DeveloperPreview {
                             companyname: "Aajjo.com",
                             jobtitle: "Data Entry Operator",
                             urllink: "https://www.simplyhired.co.in/search?q=delhi+")
+    
+    let resource = ResourceModel(creator: "Prathamesh Araikar",
+                                 desc: "Roadmap to Data Structures and Algorithms - 35 hour course by Angela You",
+                                 tags: "java, python",
+                                 title: "DSA Masterclass",
+                                 type: "Course",
+                                 url: "https://www.google.com",
+                                 upvotes: 10,
+                                 downvotes: 3)
 }
