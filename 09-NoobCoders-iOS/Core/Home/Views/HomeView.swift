@@ -36,19 +36,19 @@ struct HomeView: View {
                     
                     ContentView()
                         .tabItem {
-                            Image(systemName: "g.circle")
-                            Text(Tabs.geeksforgeeks.rawValue)
+                            Image(systemName: "square.grid.2x2.fill")
+                            Text(Tabs.resources.rawValue)
                         }
-                        .tag(Tabs.geeksforgeeks)
+                        .tag(Tabs.resources)
                     
-                    ContentView()
+                    NewsView()
                         .tabItem {
                             Image(systemName: "newspaper")
                             Text(Tabs.news.rawValue)
                         }
                         .tag(Tabs.news)
                     
-                    ContentView()
+                    JobsView()
                         .tabItem {
                             Image(systemName: "graduationcap")
                             Text(Tabs.jobs.rawValue)
@@ -73,7 +73,7 @@ extension HomeView {
     enum Tabs: String {
         case home = "Home"
         case contests = "All Contests"
-        case geeksforgeeks = "GeeksForGeeks"
+        case resources = "Resources"
         case news = "News"
         case jobs = "Jobs"
     }
@@ -85,8 +85,8 @@ extension HomeView {
             return Tabs.home.rawValue
         case .contests:
             return Tabs.contests.rawValue
-        case .geeksforgeeks:
-            return Tabs.geeksforgeeks.rawValue
+        case .resources:
+            return Tabs.resources.rawValue
         case .news:
             return Tabs.news.rawValue
         case .jobs:
