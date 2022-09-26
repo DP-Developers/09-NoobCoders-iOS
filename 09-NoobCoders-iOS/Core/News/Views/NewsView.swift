@@ -27,6 +27,7 @@ struct NewsView: View {
                 .listRowBackground(Color(red: 0.16, green: 0.15, blue: 0.31, opacity: 1.00))
             }
             .listStyle(.plain)
+            .clipped()
             .sheet(isPresented: $showSheet) {
                 NewsDeatilLoadingView(article: $selectedArticle)
             }
