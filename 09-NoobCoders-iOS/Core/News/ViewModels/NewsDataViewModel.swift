@@ -10,6 +10,8 @@ import Combine
 
 class NewsDataViewModel: ObservableObject {
     @Published var allNews: NewsDataModel = NewsDataModel(status: "", totalResults: 0, articles: [])
+    @Published var topNews: [ArticleModel] = []
+    
     private let newsDataService = NewsDataService()
     private var cancellabes = Set<AnyCancellable>()
     
@@ -21,6 +23,8 @@ class NewsDataViewModel: ObservableObject {
         newsDataService.$allNewsData
             .sink { [weak self] news in
                 self?.allNews = news
+                self?.topNews.append(contentsOf: (self?.allNews.articles.prefix(3) ?? []))
+//                print(self?.topNews ?? "")
             }
             .store(in: &cancellabes)
     }
