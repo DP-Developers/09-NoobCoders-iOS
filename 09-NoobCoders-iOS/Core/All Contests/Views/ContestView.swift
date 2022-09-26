@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContestView: View {
+    
     let contest: AllContestModel
     
     var body: some View {
@@ -20,6 +21,7 @@ struct ContestView: View {
                 Link("", destination: (URL(string: contest.url) ?? URL(string: "https://www.google.com")!))
                 
             }
+            .padding(.horizontal)
             .foregroundColor(Color.theme.accent)
         }
     }
