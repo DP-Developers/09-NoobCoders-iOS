@@ -48,6 +48,8 @@ struct AllContestsView: View {
 
 struct AllContestsView_Previews: PreviewProvider {
     static var previews: some View {
-        AllContestsView()
+        NavigationView {
+            AllContestsView()
+        }
     }
 }
