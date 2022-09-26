@@ -58,4 +58,13 @@ class NetworkingManager {
             print(error)
         }
     }
+    
+    static func handleCompletionForJobsData(completion: Subscribers.Completion<Publishers.Decode<AnyPublisher<Data, Error>, [JobsDataModel], JSONDecoder>.Failure>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            print(error)
+        }
+    }
 }
