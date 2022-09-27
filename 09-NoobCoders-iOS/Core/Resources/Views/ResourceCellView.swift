@@ -15,10 +15,13 @@ struct ResourceCellView: View {
     var body: some View {
         ZStack {
             Color.theme.secondaryBackground.ignoresSafeArea()
-            HStack {
-                leftSide
-                Spacer()
-                rightSide
+            VStack {
+                HStack {
+                    leftSide
+                    Spacer()
+                    rightSide
+                }
+                Link(destination: URL(string: resource.url) ?? URL(string: "https://www.google.com")!) {}
             }
         }
     }
