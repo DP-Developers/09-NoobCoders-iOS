@@ -176,7 +176,11 @@ extension ResourceSheetView {
     
     private var submitButton: some View {
         Button {
-                contributeResourceVm.addDataToFirebase(newResource: ResourceModel(creator: creatorName, desc: description, tags: tags, title: title, type: selectedResourceType.rawValue, url: url, upvotes: 0, downvotes: 0))
+//                contributeResourceVm.addDataToFirebase(newResource: ResourceModel(creator: creatorName, desc: description, tags: tags, title: title, type: selectedResourceType.rawValue, url: url, upvotes: 0, downvotes: 0))
+            
+            contributeResourceVm.addDataToFirebase(newResource: ResourceModel(creator: creatorName, desc: description, tags: tags, title: title, type: selectedResourceType.rawValue, url: url, upvotes: 0, downvotes: 0, upvotedusers: [], downvotedusers: []))
+            
+            
             dismiss()
         } label: {
             Text("Submit")
