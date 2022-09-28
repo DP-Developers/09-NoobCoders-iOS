@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ResourceCellView: View {
     
+    private let resourceDataService = ResourceDataService()
     @State private var bookmarkIsSelected: Bool = false
+    @State private var isGreenSelected: Bool = false
+    @State private var isRedSeleted: Bool = false
+    
     let resource: ResourceModel
     
     var body: some View {
@@ -51,54 +55,68 @@ extension ResourceCellView {
         }
     }
     
-//    private var bookmark: some View {
-//        Image(systemName: bookmarkIsSelected ? "bookmark.fill" : "bookmark")
-//            .resizable()
-//            .scaledToFit()
-//            .frame(width: 30, height: 30)
-//            .foregroundColor(bookmarkIsSelected ? Color.theme.lightOrangeColor: Color.theme.accent)
-//            .padding(.top)
-//            .onTapGesture {
-//                withAnimation(.easeInOut) {
-//                    bookmarkIsSelected.toggle()
-//                }
-//            }
-//    }
+    //    private var bookmark: some View {
+    //        Image(systemName: bookmarkIsSelected ? "bookmark.fill" : "bookmark")
+    //            .resizable()
+    //            .scaledToFit()
+    //            .frame(width: 30, height: 30)
+    //            .foregroundColor(bookmarkIsSelected ? Color.theme.lightOrangeColor: Color.theme.accent)
+    //            .padding(.top)
+    //            .onTapGesture {
+    //                withAnimation(.easeInOut) {
+    //                    bookmarkIsSelected.toggle()
+    //                }
+    //            }
+    //    }
     
     private var upvoteDownvote: some View {
-        HStack(spacing: 20.0) {
-            HStack {
-                Text("\(resource.upvotes)")
-                    .font(.callout)
-                    
-                
+        HStack(spacing: 15.0) {
+            Text("\(resource.upvotedusers.count)")
+                .foregroundColor(
+                    (resource.upvotedusers.count > 0) ? Color.theme.greenColor :
+                        (resource.upvotedusers.count == 0) ? Color.theme.secondaryText : Color.theme.redColor)
+            
+            Button {
+                isGreenSelected = true
+                resourceDataService.upvotePressed(resourceTitle: resource.title)
+            } label: {
                 Image(systemName: "chevron.up")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 10, height: 10)
             }
             .foregroundColor(Color.theme.greenColor)
+            //            .foregroundColor(isGreenSelected ? Color.theme.secondaryText : Color.theme.greenColor)
+            .buttonStyle(.plain)
+            .disabled(isGreenSelected == true)
             
-            HStack {
-                Text("\(resource.downvotes)")
-                    .font(.callout)
-                    
-                
+            Text("\(resource.downvotedusers.count)")
+                .foregroundColor(
+                    (resource.downvotedusers.count > 0) ? Color.theme.redColor :
+                        (resource.downvotedusers.count == 0) ? Color.theme.secondaryText : Color.theme.redColor)
+            
+            Button {
+                isRedSeleted = true
+                resourceDataService.downvotePressed(resourceTitle: resource.title)
+            } label: {
                 Image(systemName: "chevron.down")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 10, height: 10)
             }
             .foregroundColor(Color.theme.redColor)
+            //            .foregroundColor(isRedSeleted ? Color.theme.secondaryText : Color.theme.redColor)
+            .buttonStyle(.plain)
+            .disabled(isRedSeleted == true)
         }
+        .font(.headline)
     }
     
     private var rightSide: some View {
         VStack(alignment: .trailing, spacing: 10.0) {
-//            bookmark
+            //            bookmark
             Spacer()
             upvoteDownvote
         }
     }
 }
-
