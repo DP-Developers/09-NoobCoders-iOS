@@ -12,5 +12,6 @@ struct ResourceModel: Identifiable {
     let creator, desc, tags, title, type: String
     let url: String
     let upvotes, downvotes: Int
+    let upvotedusers, downvotedusers: [String]
     var id = UUID().uuidString
 }
