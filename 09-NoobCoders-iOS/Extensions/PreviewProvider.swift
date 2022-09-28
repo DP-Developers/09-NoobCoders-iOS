@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+import Foundation
+import SwiftUI
+
 extension PreviewProvider {
     static var dev: DeveloperPreview {
         return DeveloperPreview.instance
@@ -24,7 +27,7 @@ class DeveloperPreview {
         startTime: "Sep 15, 05:30",
         endTime: "Sep 30, 05:30",
         duration: "1296000",
-        site: _9_NoobCoders_iOS.Site.codeForces,
+        site: "CodeForces",
         in24_Hours: _9_NoobCoders_iOS.In24_Hours.no,
         status: _9_NoobCoders_iOS.Status.before)
     
@@ -42,6 +45,15 @@ class DeveloperPreview {
                             jobtitle: "Data Entry Operator",
                             urllink: "https://www.simplyhired.co.in/search?q=delhi+")
     
+//    let resource = ResourceModel(creator: "Prathamesh Araikar",
+//                                 desc: "Roadmap to Data Structures and Algorithms - 35 hour course by Angela You",
+//                                 tags: "java, python",
+//                                 title: "DSA Masterclass",
+//                                 type: "Course",
+//                                 url: "https://www.google.com",
+//                                 upvotes: 10,
+//                                 downvotes: 3)
+    
     let resource = ResourceModel(creator: "Prathamesh Araikar",
                                  desc: "Roadmap to Data Structures and Algorithms - 35 hour course by Angela You",
                                  tags: "java, python",
@@ -49,5 +61,7 @@ class DeveloperPreview {
                                  type: "Course",
                                  url: "https://www.google.com",
                                  upvotes: 10,
-                                 downvotes: 3)
+                                 downvotes: 3,
+                                 upvotedusers: [],
+                                 downvotedusers: [])
 }
