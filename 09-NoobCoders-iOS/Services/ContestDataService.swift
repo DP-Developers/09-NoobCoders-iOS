@@ -35,7 +35,7 @@ class ContestDataService {
     func convertDates(contestList: [AllContestModel]) -> [AllContestModel] {
         for contest in contestList {
             var contest = contest
-            if contest.site == .codeChef {
+            if contest.site == "CodeChef" {
                 contest.startTime = Date(codechefString: contest.startTime).asDateString()
                 contest.endTime = Date(codechefString: contest.endTime).asDateString()
                 updatedContestsData.append(contest)
