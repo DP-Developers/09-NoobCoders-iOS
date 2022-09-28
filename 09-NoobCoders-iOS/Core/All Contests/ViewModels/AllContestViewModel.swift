@@ -28,7 +28,7 @@ class AllContestViewModel: ObservableObject {
                 self?.allContestIn24Hours = contests.filter({ $0.in24_Hours == .yes})
                 self?.allContestAfter24Hours = contests.filter({ $0.in24_Hours == .no})
                 self?.firstContest = self?.allContestIn24Hours.first ?? DeveloperPreview.instance.contest
-//                print(self?.firstContest ?? "")
+//                print(self?.allContests)
             }
             .store(in: &cancellabes)
     }
