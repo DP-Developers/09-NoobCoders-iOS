@@ -11,34 +11,30 @@ import FirebaseFirestore
 
 struct ResourcesView: View {
     
-//    @StateObject private var resourceVm: ResourceViewModel = ResourceViewModel()
-    @State private var resources: [ResourceModel] = []
-//    private let resourceDataService = ResourceDataService()
+    @ObservedObject private var resourceVm: ResourceViewModel = ResourceViewModel()
     @State private var isSelected: Bool = true
+    @State private var searchText: String = ""
     
     var body: some View {
         ZStack {
             Color.theme.background.ignoresSafeArea()
             
             VStack {
+                searchBar
                 List {
-                    ForEach(resources, content: { resource in
+                    ForEach(resourceVm.allResources, content: { resource in
                         ResourceCellView(resource: resource)
                     })
                     .listRowBackground(Color(red: 0.16, green: 0.15, blue: 0.31, opacity: 1.00))
                 }
                 .listStyle(.plain)
                 .clipped()
-//                .refreshable {
-//                    print("refresh")
-//                }
+                .refreshable {
+                    self.resourceVm.addResources()
+                }
             }
             .onAppear {
-                DispatchQueue.main.async {
-                    resources = []
-                    loadResources()
-                }
-                
+                self.resourceVm.addResources()
             }
         }
     }
@@ -54,37 +50,37 @@ struct ResourcesView_Previews: PreviewProvider {
 }
 
 extension ResourcesView {
-    private func loadResources() {
-        let db = Firestore.firestore()
-        
-        db.collection("resources").getDocuments { querySnapshot, error in
-            if let e = error {
-                print("There was an error in retrieving data \(e.localizedDescription)")
-            } else {
-                if let querySnapshotDocuments = querySnapshot?.documents {
-                    for document in querySnapshotDocuments {
-                        if
-                            let creator = document["creator"] as? String,
-                            let description = document["desc"] as? String,
-                            let tags = document["tags"] as? String,
-                            let title = document["title"] as? String,
-                            let type = document["type"] as? String,
-                            let url = document["url"] as? String,
-                            let upvotes = document["upvotes"] as? Int,
-                            let downvotes = document["downvotes"] as? Int {
-                            
-                            DispatchQueue.main.async {
-                                let newResource = ResourceModel(creator: creator, desc: description, tags: tags, title: title, type: type, url: url, upvotes: upvotes, downvotes: downvotes)
-                                self.resources.append(newResource)
-//                                print(resources)
-                            }
-                            
-                        } else {
-                            print("Error fetching data!!")
-                        }
-                    }
+    private var searchBar: some View {
+        TextField("", text: $searchText)
+            .placeholder(when: searchText.isEmpty, placeholder: {
+                Text("Kotlin, Swift, Python....")
+                    .foregroundColor(.gray)
+            })
+            .disableAutocorrection(true)
+            .foregroundColor(Color.theme.accent)
+            .frame(maxWidth: .infinity)
+            .frame(height: 55)
+            .padding(.horizontal)
+            .background(Color(red: 0.16, green: 0.15, blue: 0.31, opacity: 1.00))
+            .overlay(alignment: .trailing) {
+                Button {
+                    resourceVm.filterResources(tag: searchText)
+                    UIApplication.shared.endEditing()
+                    searchText = ""
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .padding()
+                        .offset(x: 10)
+                        .foregroundColor(Color.white)
+                        .padding(.trailing, 10)
+                        .opacity(
+                            searchText.isEmpty ? 0 : 1
+                        )
                 }
             }
-        }
+            .cornerRadius(10)
+            .padding()
     }
 }
+
+
