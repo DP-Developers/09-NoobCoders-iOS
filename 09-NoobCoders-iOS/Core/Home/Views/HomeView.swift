@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @AppStorage("currentUserSignIn") var currentUserSignIn: Bool = true
-    @AppStorage("userOnLoginScreen") var userOnLoginScreen: Bool = false
-    
+        
     @State private var tabSelected: Tabs = .home
-    //    @State private var showSheet: Bool  = false
+    @State private var showSheet: Bool  = false
     private let resourceDataService = ResourceDataService()
     
     var body: some View {
@@ -74,28 +71,30 @@ struct HomeView: View {
                     
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            currentUserSignIn.toggle()
-                            userOnLoginScreen.toggle()
+                            showSheet.toggle()
                         } label: {
-                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                            Image(systemName: "gear")
                                 .foregroundColor(Color.theme.lightOrangeColor)
                         }
                         
                     }
                 }
             }
-            //                .sheet(isPresented: $showSheet) {
-            //                    ResourceSheetView()
-            //                }
+            .sheet(isPresented: $showSheet) {
+                SettingsView()
+            }
         }
     }
 }
 
 
 
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-            HomeView()
+        //        NavigationView {
+        HomeView()
+        //        }
     }
 }
 
@@ -120,7 +119,7 @@ extension HomeView {
         case .news:
             return Tabs.news.rawValue
         case .jobs:
-           return Tabs.jobs.rawValue
+            return Tabs.jobs.rawValue
         }
     }
 }
